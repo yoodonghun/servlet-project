@@ -12,14 +12,22 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="container">
-    <h1>날짜, 시간 링크</h1></a>
+   <div class="container mr-5">   
+      <h1>체격 조건 입력</h1>   
+       
+       <form method="get" action="/lesson2/qz03_1.jsp">
+	       <div class="d-flex">
+	          <input type="text" class="form-control col-2" name="height" placeholder="키를 입력하세요">
+	          <small class="mt-3 ml-2 mr-2">cm</small>
+	          <input type="text" class="form-control col-2" name="weight" placeholder="몸무게를 입력하세요">
+	          <small class="mt-3 ml-2">kg</small>
+	          <input type="submit" class="form-control btn btn-info col-1 ml-2" value="계산">
+	          
+	       </div>
+       </form>
+       
+       
+   </div>
 
-    
-    <div class="d-flex">
-       <a href="/lesson2/qz02_1.jsp?type=time" class="form-control btn btn-info col-3 ml-2">현재 시간 확인</a>
-       <a href="/lesson2/qz02_1.jsp?type=date" class="form-control btn btn-success col-3 ml-2">현재 날짜 확인</a>
-    </div>
-</div>
 </body>
 </html>

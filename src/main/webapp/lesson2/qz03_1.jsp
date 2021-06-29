@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,14 +13,31 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
-<div class="container">
-    <h1>날짜, 시간 링크</h1></a>
+   <%
+      int height = Integer.valueOf(request.getParameter("height"));
+      int weight = Integer.valueOf(request.getParameter("weight"));
+      
+      double bmi = weight / ((height / 100.0) * (height / 100.0));
+      
+      String result;
+      if(bmi <= 20){
+    	  result="저체중";
+      }else if (bmi<=25){
+    	  result="정상";
+      }else if (bmi<=30) {
+    	  result="과체중";
+      }else {
+    	  result="비만";
+      }
+   %>
+   
+   <div class="container">
+       <h1>BMI 측정 결과</h1>
+       <div class="display-4">당신은 <span class="text-info"><%= result %></span> 입니다</div>
+       <div>BMI 수치: <%= bmi %></div>
+   </div>
+   
+   
 
-    
-    <div class="d-flex">
-       <a href="/lesson2/qz02_1.jsp?type=time" class="form-control btn btn-info col-3 ml-2">현재 시간 확인</a>
-       <a href="/lesson2/qz02_1.jsp?type=date" class="form-control btn btn-success col-3 ml-2">현재 날짜 확인</a>
-    </div>
-</div>
 </body>
 </html>

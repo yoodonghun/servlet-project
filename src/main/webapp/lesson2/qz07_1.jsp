@@ -13,6 +13,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 <body>
+  <%
+    String menu = request.getParameter("menu");
+    String exception =  request.getParameter("exception");
+  
+  %>
    <div class="container">
      <h1 class="text-center">검색 결과</h1>
      
@@ -44,17 +49,25 @@
 	             map = new HashMap<String, Object>() {{ put("name", "반올림피자"); put("menu", "피자"); put("point", 4.3); } };
 	             list.add(map); 
 	             
-	             for(int i=0; i < list.size(); i++){
+	             for(Map<String, Object>item : list){
+	            	 if(item.get("menu").equals(menu)) { // 메뉴 일치하는 경우
+	            			 if(exception != null && (Double)item.get("point") < 4.0){
+	            				 // 체크가 됐고, 4.0 제외인 경우 skip
+	            				 continue;
+	            			 }
+	            		 
+	            	 
 	            	 
 	             
 	             %>
 	             <tr>
-	               <td></td>
-	               <td></td>
-	               <td></td>
+	               <td><%= item.get("menu") %></td>
+	               <td><%= item.get("name") %></td>
+	               <td><%= item.get("point") %></td>
 	             </tr>
 	             <%
-	               }
+	                  } //- if문
+	               } //for 문
 	             %>
 	          </td>
 	       </tr>

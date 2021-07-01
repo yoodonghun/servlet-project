@@ -17,7 +17,7 @@
       <form method="post" action="/lesson2/qz07_1.jsp">
 	      <div class="d-flex">
 	      	<input type="text" class="forn-control col-3" name="menu"><br><br>
-	      	<label><input type="checkbox" class="ml-2 mt-3" name="exception"><span class="ml-1 mt-2">4점 이하 제외</span></label> 
+	      	<label><input type="checkbox" class="ml-2 mt-3" name="exception" value="true"><span class="ml-1 mt-2">4점 이하 제외</span></label> 
 	      </div>
 	      <button type="submit" class="form-control btn btn-success col-1 mt-3">검색</button>
 	  </form>    

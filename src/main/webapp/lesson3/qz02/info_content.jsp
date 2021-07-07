@@ -89,8 +89,8 @@
 	 Integer paramId = Integer.valueOf(request.getParameter("id")); 
 	 
 	 for(Map<String, Object> music : musicList){
-		 if((Integer)music.get("id").equals(paramId)){
-			 if(id.equals(paramSearch))
+		 Integer id = (Integer) music.get("id");
+			 if(id.equals(paramId)){
 			 target = music;
 			 break;
 		 }
